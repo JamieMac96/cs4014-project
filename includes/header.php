@@ -39,7 +39,7 @@
       </div>
       <div class="col-md-5 hidden-sm-down">
         <form class="form-inline my-2 my-lg-0" action="search-results.php" method="get">
-          <input id="dynamic-search" name="search-query" class="form-control mr-sm-2" autocomplete="off" type="text" placeholder="Search">
+          <input id="dynamic-search" maxlength="20" name="search-query" class="form-control mr-sm-2" autocomplete="off" type="text" placeholder="Search">
           <ul class="dropdown-menu search-dropdown">
             <div id="dynamic-results"></div>
           </ul>

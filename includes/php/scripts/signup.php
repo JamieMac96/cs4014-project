@@ -1,12 +1,10 @@
 <?php
 
 
-// Honeypot
-if( ! $_POST['contact'] == '') return;
-
 
 // Submission check
 if(isset($_POST['signUpButton'])) {
+	if( ! $_POST['contact'] == '') return;
   $firstName = $db->quote(trim($_POST['signUpFirstName']));
   $lastName = $db->quote(trim($_POST['signUpLastName']));
   $signUpEmail = $db->quote(trim(strtolower($_POST['signUpEmail'])));
@@ -26,7 +24,9 @@ if(isset($_POST['signUpButton'])) {
 
 
         //Salted password hashing
-        $mysalt = openssl_random_pseudo_bytes(64, $strong);
+        //$mysalt = openssl_random_pseudo_bytes(64, $strong);
+		//$mysalt = random_bytes(64);
+		$mysalt = md5(rand(10,1000));
         $saltyPassword = $signUpPassword . $mysalt;
 
 

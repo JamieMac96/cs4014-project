@@ -25,8 +25,8 @@
       if($claimant == $userID && $status == 'Claimed'){
         ?>
 
-        <br><p><b>Document: </b><a href=" <?php echo "$document"; ?> " download>
-          <img src="http://localhost/CS4014_project/files/images/document_download.jpg" alt="face" height="42" width="42">
+        <br><p><b>Download Full Document: </b><a href=" <?php echo "$document"; ?> " download>
+          <img src="http://testweb3.csisad.ul.campus/modules/cs4014/group2/files/images/document_download.jpg" alt="download-doc" height="42" width="42">
         </a></p>
 
         <?php
@@ -73,7 +73,7 @@
       <p>Document Sample: </p>
       <?php
       if($docFormat == '.pdf' && file_exists($sampleDoc)){?>
-        <object data="<?php echo $sampleDoc ?>" type="application/<?php echo str_replace(".","",$docFormat) ?>" width="100%" height="100%">
+        <object data="<?php echo $sampleDoc ?>" type="application/<?php echo str_replace(".","",$docFormat) ?>" width="100%" height="65%">
           <embed type="application/<?php echo str_replace(".","",$sampleDoc) ?>" src="<?php echo $sampleDoc ?>" width="100%" height="100%">
           </embed>
         </object>
@@ -81,7 +81,7 @@
       }else if(file_exists($sampleDoc)){
         ?>
         <br><p><b>Download the document sample: </b><a href=" <?php echo "$sampleDoc"; ?> " download>
-          <img src="http://localhost/CS4014_project/files/images/document_download.jpg" alt="face" height="42" width="42">
+          <img src="http://testweb3.csisad.ul.campus/modules/cs4014/group2/files/images/document_download.jpg" alt="face" height="42" width="42">
         </a></p>
         <?php
         }

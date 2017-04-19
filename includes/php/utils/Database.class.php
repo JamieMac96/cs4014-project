@@ -6,7 +6,7 @@ class Database{
     // Try and connect to the database
      if(!isset(self::$connection)) {
          // Load configuration as an array. Use the actual location of your configuration file
-         $config = parse_ini_file('/var/www/html/config.ini');
+         $config = parse_ini_file('C:\inetpub\wwwroot\modules\cs4014\group2\config.ini');
          self::$connection = new mysqli('localhost',$config['username'],$config['password'],$config['dbname']);
      }
 

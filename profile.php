@@ -20,11 +20,10 @@ if(!isset($_GET['userID'])){
         $testURL  = $profilePicURL;
         clearstatcache();
         if(file_exists($testURL)){
-          $picTopBeUsed = 'http://localhost/CS4014_project/' . $profilePicURL;
+          $picTopBeUsed = 'http://testweb3.csisad.ul.campus/modules/cs4014/group2/' . $profilePicURL;
         }
         else{
-          echo "<br>else<br>";
-          $picTopBeUsed = 'http://localhost/CS4014_project/files/images/default-profile-image.png';
+          $picTopBeUsed = 'http://testweb3.csisad.ul.campus/modules/cs4014/group2/files/images/default-profile-image.png';
         }
       ?>
       <img src="<?php echo $picTopBeUsed ?>" alt="face" height="200" width="200">

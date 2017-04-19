@@ -1,5 +1,5 @@
 <?php
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 include_once(SITE_PATH . '/includes/php/utils/QueryHelper.class.php');
 
 class Validator{
@@ -115,7 +115,6 @@ class Validator{
       return true;
     }
     else{
-      echo "invalid taskTitle";
       return false;
     }
   }
@@ -126,7 +125,6 @@ class Validator{
       return true;
     }
     else{
-      echo "invalid taskDescription";
       return false;
     }
   }
@@ -152,7 +150,6 @@ class Validator{
       return true;
     }
     else{
-      echo "invalid number of pages (or words)";
       return false;
     }
   }
@@ -167,7 +164,6 @@ class Validator{
     for($i = 0; $i < sizeof($tags); $i++){
       if(!$tags[$i] == 'Tag'){
         if(!$qh -> verifyDropDownInput($tags[$i], $selectFormat, $columnName)){
-          echo "invalid tag: $i";
           return false;
         }
       }
@@ -185,7 +181,6 @@ class Validator{
       return true;
     }
     else{
-      echo "invalid doc type";
       return false;
     }
   }
@@ -203,7 +198,6 @@ class Validator{
         }
       }
     }
-    echo "deadlines not valid";
     return false;
   }
 
@@ -220,12 +214,11 @@ class Validator{
         return true;
       }
       else{
-        echo "error uploading document";
         return false;
       }
     }
     else{
-      echo "doc type does not match documents true extension";
+      return false;
     }
   }
 

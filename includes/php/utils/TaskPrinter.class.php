@@ -1,5 +1,5 @@
 <?php
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 include_once(SITE_PATH . '/includes/php/utils/DateFormatConverter.class.php');
 include_once(SITE_PATH . '/includes/php/utils/QueryHelper.class.php');
 

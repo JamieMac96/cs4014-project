@@ -1,5 +1,5 @@
 <?php
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 include_once(SITE_PATH . '/includes/php/utils/User.class.php');
 include_once(SITE_PATH . '/includes/php/utils/Database.class.php');
 
@@ -39,7 +39,7 @@ class QueryHelper{
     $database = $this->database;
     echo "student ID: $studentID subjectID: $subjectID fname: $firstName lname: $lastName email: $signUpEmail pword: $signUpPassword salt:  $passwordSalt";
 
-    $insertSql = "INSERT INTO   `CS4014_project_database`.`User` (
+    $insertSql = "INSERT INTO   `User` (
                           `UserID` ,
                           `Subject_SubjectID` ,
                           `ForeName` ,
@@ -148,7 +148,7 @@ class QueryHelper{
     echo "user ID is: $userID";
 
     //sql statement
-    $taskInsert = "INSERT INTO `CS4014_project_database`.`Task`(
+    $taskInsert = "INSERT INTO `Task`(
       `TaskID`,
       `User_UserID`,
       `TaskType_TaskTypeID`,
@@ -219,7 +219,7 @@ class QueryHelper{
       $documentTypeID = $this -> getDocTypeIDFromDocType($docType);
 
 
-      $insertSQL = "INSERT INTO `CS4014_project_database`.`Document`(
+      $insertSQL = "INSERT INTO `Document`(
         `DocumentID`,
         `DocumentURL`,
         `SampleURL`,
@@ -247,7 +247,7 @@ class QueryHelper{
     $taskID = $task -> getTaskID();
     echo "task ID: $taskID";
 
-    $sql = "INSERT INTO `CS4014_project_database`.`Deadline`(`Task_TaskID`, `Claim`, `Completion`)
+    $sql = "INSERT INTO `Deadline`(`Task_TaskID`, `Claim`, `Completion`)
             VALUES($taskID, '$claimDeadline', '$completeDeadline');";
 
     $deadlineInsert = $database -> query($sql);
@@ -273,7 +273,7 @@ class QueryHelper{
       $currentTag = $task -> getTag($i + 1);
       if($currentTag != 'Tag'){
         $tagID = $this -> getTagIDFromTagVal($currentTag);
-        $tagInsert = $database -> query("INSERT INTO `CS4014_project_database`.`TaskTag`
+        $tagInsert = $database -> query("INSERT INTO `TaskTag`
                             (`TaskTagID`, `Tag_TagID`, `Task_TaskID`)
                             VALUES (NULL, $tagID, $taskID);");
 
@@ -354,8 +354,10 @@ class QueryHelper{
 
  function getTasksMain($start, $number){
    $database = $this->database;
-
-   session_start();
+   
+	if(!isset($_SESSION['userID'])){
+		 session_start();
+	}
 
    $currentUser = User::getUser($_SESSION['userID']);
    $currentUserID = $currentUser -> getUserID();
@@ -399,7 +401,9 @@ class QueryHelper{
  }
 
  function getPersonalizedTasks($start, $number, $favouriteTags, $favouriteSubjects){
-   session_start();
+   if(!isset($_SESSION['userID'])){
+	session_start();
+   }
 
    $currentUser = User::getUser($_SESSION['userID']);
    $currentUserID = $currentUser -> getUserID();
@@ -461,8 +465,10 @@ class QueryHelper{
 
  function getMyTasks($start, $number){
    $database = $this->database;
-
-   session_start();
+	if(!isset($_SESSION['profileID'])){
+		session_start();
+	}
+	
    $currentUser = User::getUser($_SESSION['profileID']);
    $currentUserID = $currentUser -> getUserID();
 
@@ -484,8 +490,9 @@ class QueryHelper{
 
  function getClaimedTasks($start, $number){
    $database = $this->database;
-
-   session_start();
+	if(!isset($_SESSION['profileID'])){
+		session_start();
+	}
 
    $currentUser = User::getUser($_SESSION['profileID']);
    $currentUserID = $currentUser -> getUserID();
@@ -610,7 +617,7 @@ class QueryHelper{
  function insertFlag($taskID, $complaint){
    $database = $this->database;
 
-   $sql = "INSERT INTO `CS4014_project_database`.`Flag`(`FlagID`, `Task_TaskID`, `Complaint`) VALUES (NULL,$taskID,'$complaint');";
+   $sql = "INSERT INTO `Flag`(`FlagID`, `Task_TaskID`, `Complaint`) VALUES (NULL,$taskID,'$complaint');";
 
    $res = $database -> query($sql);
  }
@@ -619,27 +626,22 @@ class QueryHelper{
    $database = $this->database;
 
    $ctr = 0;
-
-   session_start();
+	if(!isset($_SESSION['userID'])){
+		session_start();
+	}
 
    $currentUser = User::getUser($_SESSION['userID']);
    $currentUserID = $currentUser -> getUserID();
 
    $joinedTaskSQL =  "SELECT *
-                      FROM  `JoinedTask` ,  `Flag`
-                      WHERE  `JoinedTask`.TaskID =  `Flag`.Task_TaskID
-                      ORDER BY TaskID
+                      FROM `Flag`
+					  LEFT JOIN `JoinedTask`
+                      ON `Flag`.Task_TaskID = `JoinedTask`.TaskID
+                      GROUP BY TaskID
                       LIMIT $start, $number;";
 
    $result = $database -> select($joinedTaskSQL);
-   $uniqueResult = array();
-   for($i = 0; $i < sizeof($result) + 1; $i++){
-     if($result[$i]['TaskID'] != $result[$i + 1]['TaskID']){
-       $uniqueResult[$ctr] = $result[$i];
-       $ctr++;
-     }
-   }
-   return $uniqueResult;
+   return $result;
  }
 
  function getFlags($taskID){

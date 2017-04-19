@@ -1,11 +1,12 @@
 <?php
-session_start();
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 include_once(SITE_PATH.'/includes/php/utils/TaskRetriever.class.php');
 include_once(SITE_PATH.'/includes/php/utils/TaskPrinter.class.php');
+include_once(SITE_PATH. "/includes/php/utils/Database.class.php");
 
 if(isset($_GET['submit-search']) || isset($_GET['count'])){
-  $searchQuery = htmlentities($_GET['search-query']);
+	$db = new Database();
+  $searchQuery = $db -> quote(htmlentities($_GET['search-query']));
   if(isset($_GET['count'])){
     $count = $_GET['count'];
     printMyTasks($count, $searchQuery);

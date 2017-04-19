@@ -11,10 +11,10 @@
           <form class="form-inline" action="login.php" novalidate="novalidate" method="post" onsubmit="window.location.reload()">
             <div class="form-group">
               <div id="emailSignInGroup" class="form-group">
-                <input id="signInEmail" name="signInEmail" class="form-control" type="email" placeholder="email" />
+                <input id="signInEmail" maxlength="255" name="signInEmail" class="form-control" type="email" placeholder="email" />
               </div>
               <div id="passwordSignInGroup" class="form-group">
-                <input id="signInPassword" name="signInPassword" type="password" class="form-control" placeholder="password"/>
+                <input id="signInPassword" maxlength="20" name="signInPassword" type="password" class="form-control" placeholder="password"/>
                 <input type="submit" class="btn btn-default" value="login" name="loginSubmitButton" role="button"/>
               </div>
             </div>

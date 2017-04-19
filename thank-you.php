@@ -7,7 +7,7 @@
       <h1>
         Thank You For Signing Up!
       </h1>
-      <a href="http://localhost/CS4014_project/index.php">
+      <a href="http://testweb3.csisad.ul.campus/modules/cs4014/group2/index.php">
         <input class="btn-default btn" type="submit" name="goToHome" value="Go To Home Page"></input>
       </a>
     </div>

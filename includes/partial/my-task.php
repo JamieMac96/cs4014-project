@@ -1,4 +1,4 @@
-<?php include_once('/var/www/html/CS4014_project/config.php');
+<?php include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 ?>
 
 <div class="card task-card mb-3">
@@ -18,7 +18,9 @@
             <li>Field: <?php echo "$subject"; ?></li>
             <li>Status: <?php echo "$status"; ?></li>
             <?php
-            session_start();
+			if(!isset($_SESSION['userID'])){
+				session_start();
+			}
             $userID = $_SESSION['userID'];
             if(isset($claimantEmail) && $userID == $ownerID){
               echo "<li>Claimant Email: " . $claimantEmail . "</li>";

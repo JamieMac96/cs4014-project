@@ -88,12 +88,12 @@
     </div>
     <div class=" my-2">
       <label for="claim-date">Claim deadline:</label>
-      <input name="claim-date" id="claim-date" type="date" />
+      <input placeholder="YYYY-MM-DD" name="claim-date" id="claim-date" type="date" />
     </div>
 
     <div class=" my-2">
       <label for="completion-date">Completion deadline:</label>
-      <input name="completion-date" id="completion-date" type="date" />
+      <input placeholder="YYYY-MM-DD" name="completion-date" id="completion-date" type="date" />
     </div>
     <div class="my-2 form-inline">
       <input type="submit" class="btn btn-default" value="Submit" name="taskSubmitButton" role="button"/>

@@ -14,7 +14,9 @@
             <li>Number of Words: <?php echo "$numWords"; ?></li>
             <li>Field: <?php echo "$subject"; ?></li>
             <?php
-            session_start();
+			if(!isset($_SESSION['userID'])){
+				session_start();
+			}
             $userID = $_SESSION['userID'];
             if(isset($ownerEmail) && $userID == $claimantID){
               echo "<li>Owner Email: " . $ownerEmail . "</li>";

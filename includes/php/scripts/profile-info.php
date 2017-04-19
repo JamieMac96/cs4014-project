@@ -1,6 +1,8 @@
 <?php
   $profileID = $_GET['userID'];
-  session_start();
+  if(!isset($_SESSION)){
+	session_start();
+  }
   $_SESSION['profileID'] = $profileID;
   if($profileID == $userID){
     $profileReputation = $reputation;

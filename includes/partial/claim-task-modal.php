@@ -14,7 +14,7 @@
               $caseref = "123";
               $name = "Bob";
               $email_subject = "PEER REVIEW WEBSITE USER: $firstname $lastname CLAIMED YOUR TASK";
-              $email_message .= "Message Body: \n";
+              $email_message = "Message Body: \n";
               $email_message .= "\n";
               $email_message .= "\n";
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 include(SITE_PATH.'/includes/php/utils/TaskRetriever.class.php');
 include(SITE_PATH.'/includes/php/utils/TaskPrinter.class.php');
 if(isset($_POST['count'])){

@@ -2,16 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        Footer Text 1
+	  <p>Website by Group 2:</p>
+        Rory Egan
+		<br>Jamie Mac Manus
       </div>
-      <div class="col-md-4">
-        Footer Text 2
-      </div>
-      <div class="col-md-4">
-        Footer Text 3
-      </div>
-      <div class="col-md-12">
-        <p>Website by Group 2</p>
+      <div class="col-md-6">
+        <a href="https://github.com/RoryEgan/cs4014-project" target="_blank">Github</a>
       </div>
     </div>
   </div>

@@ -1,7 +1,9 @@
 <?php
   include_once('includes/php/utils/QueryHelper.class.php');
+  include_once(SITE_PATH. "/includes/php/utils/Database.class.php");
 
   $qh = new QueryHelper();
+  $db = new Database();
 
   if(isset($_POST['cancel-task'])){
     $qh -> setPendingClaim($taskID);
@@ -12,7 +14,7 @@
   //ownerEmail is required by the claim-task modal thus we get this value here in the corersponding script
   $ownerEmail = $qh -> getUserEmailFromID($owner);
   if(isset($_POST['claim-task'])){
-    $message = htmlentities($_POST['email-text']);
+    $message = $db -> quote(htmlentities($_POST['email-text']));
     //email user functionality
     $qh -> setClaimed($taskID);
     $qh -> changeReputation($userID, 10);
@@ -26,7 +28,7 @@
   }
 
   if(isset($_POST['flag-task'])){
-    $complaint = htmlentities($_POST['complaint']);
+    $complaint = $db -> quote(htmlentities($_POST['complaint']));
     $qh -> changeReputation($userID, 2);
     $qh -> insertFlag($taskID, $complaint);
   }

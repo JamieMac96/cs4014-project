@@ -1,9 +1,10 @@
 <?php
-include_once('/var/www/html/CS4014_project/config.php');
+include_once('C:\inetpub\wwwroot\modules\cs4014\group2\config.php');
 
 include_once(SITE_PATH.'/includes/php/utils/TaskRetriever.class.php');
 include_once(SITE_PATH.'/includes/php/utils/TaskPrinter.class.php');
 include_once(SITE_PATH.'/includes/php/utils/QueryHelper.class.php');
+  include_once(SITE_PATH. "/includes/php/utils/Database.class.php");
 
 if(isset($_POST['count'])){
   $count = $_POST['count'];
@@ -15,22 +16,24 @@ else{
 
 
 function dynamicPrintTasks($count){
+	$db = new Database();
   $tasksPerPage = 5;
   $start = $count * $tasksPerPage;
 
   $retriever = new TaskRetriever();
   $taskPrinter = new TaskPrinter();
-
-  session_start();
+  if(!isset($_SESSION['userID'])){
+	session_start();
+  }
 
   $qh = new QueryHelper();
   $numClicks = $qh -> getNumberOfClicksForUser($_SESSION['userID']);
   if(isset($_POST['filter-tasks-button'])){
     $filters = array();
-    $filters[0] = htmlentities($_POST['filter-subject-name']);
-    $filters[1] = htmlentities($_POST['filter-task-type']);
-    $filters[2] = htmlentities($_POST['filter-doc-type']);
-    $filters[3] = htmlentities($_POST['filter-tag-value']);
+    $filters[0] = $db -> quote(htmlentities($_POST['filter-subject-name']));
+    $filters[1] = $db -> quote(htmlentities($_POST['filter-task-type']));
+    $filters[2] = $db -> quote(htmlentities($_POST['filter-doc-type']));
+    $filters[3] = $db -> quote(htmlentities($_POST['filter-tag-value']));
     $allTasks = $retriever -> getTasksMainFiltered($start, $tasksPerPage, $filters);
   }
   else if($numClicks >= 50 ){

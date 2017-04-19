@@ -36,15 +36,11 @@ $(document).ready(function() {
 			}
 			//set the
 			$('#btn_more_profile').removeClass('more-claimed').addClass('more-mine');
+			if($($($.parseHTML(data)).filter("#stop-loading-my")).length){
+				$("#remove_row").remove();
+			}
 		});
-		//we must wait for the above code to append the 'data' (returned from the php script)
-		// to the DOM before checking if there are more items to load. If not we remove the
-		// more button.
-		setTimeout(function(){
-			if($("#stop-loading-my").length){
-		    $("#remove_row").remove();
-		  }
-		}, 20);
+		
 	});
 
 	$( "#claimed-button" ).click(function() {
@@ -55,12 +51,10 @@ $(document).ready(function() {
 				$('#wrap-more-button').append(copy.html());
 			}
 			$('#btn_more_profile').removeClass('more-mine').addClass('more-claimed');
+			if($($($.parseHTML(data)).filter("#stop-loading-my")).length){
+				$("#remove_row").remove();
+			}
 		});
-		setTimeout(function(){
-			if($("#stop-loading-claimed").length){
-		    $("#remove_row").remove();
-		  }
-		}, 20);
 	});
 	// Back to Top Navigation
 	// ---------------------------------------------------------------------------
