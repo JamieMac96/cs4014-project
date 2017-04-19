@@ -40,7 +40,6 @@ $(document).ready(function() {
 				$("#remove_row").remove();
 			}
 		});
-		
 	});
 
 	$( "#claimed-button" ).click(function() {
@@ -51,7 +50,7 @@ $(document).ready(function() {
 				$('#wrap-more-button').append(copy.html());
 			}
 			$('#btn_more_profile').removeClass('more-mine').addClass('more-claimed');
-			if($($($.parseHTML(data)).filter("#stop-loading-my")).length){
+			if($($($.parseHTML(data)).filter("#stop-loading-claimed")).length){
 				$("#remove_row").remove();
 			}
 		});
