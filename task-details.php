@@ -94,7 +94,7 @@
     </div>
   </div>
   <div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <?php include_once('includes/php/scripts/display-also-viewed.php') ?>
     </div>
   </div>
