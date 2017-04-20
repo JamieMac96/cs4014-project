@@ -72,7 +72,9 @@
     <div class="col-md-5 offset-md-1">
       <p>Document Sample: </p>
       <?php
-      if($docFormat == '.pdf' && file_exists($sampleDoc)){?>
+      if($docFormat == '.pdf' && file_exists($sampleDoc) && (preg_match('/(Chrome|CriOS)\//i',$_SERVER['HTTP_USER_AGENT'])
+			&& !preg_match('/(Aviator|ChromePlus|coc_|Dragon|Edge|Flock|Iron|Kinza|Maxthon|MxNitro|Nichrome|OPR|Perk|Rockmelt|Seznam|Sleipnir|Spark|UBrowser|Vivaldi|WebExplorer|YaBrowser)/i',
+					$_SERVER['HTTP_USER_AGENT']))){?>
         <object data="<?php echo $sampleDoc ?>" type="application/<?php echo str_replace(".","",$docFormat) ?>" width="100%" height="65%">
           <embed type="application/<?php echo str_replace(".","",$sampleDoc) ?>" src="<?php echo $sampleDoc ?>" width="100%" height="100%">
           </embed>

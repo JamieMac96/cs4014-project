@@ -69,9 +69,11 @@ class QueryHelper{
               WHERE EmailAddress = '$email';";
 
     $result = $database -> select($query);
-    $salt = $result[0]['PasswordSalt'];
-
-    return $salt;
+	if($result){
+		$salt = $result[0]['PasswordSalt'];
+		return $salt;
+	}
+    return false;
   }
 
   //returns a user with the specified email and password or false if the user does not exist.

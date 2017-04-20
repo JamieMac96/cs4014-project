@@ -4,8 +4,8 @@
 <?php include('includes/php/scripts/signup.php'); ?>
 
 <body>
-  <div class="container">
-    <div class="row">
+  <div class="container my-5">
+    <div class="row my-5">
       <div class="col-md-6 offset-md-6">
         <div class="login-boundry my-5">
           <h2 class="my-3">Sign up!</h2>
@@ -36,7 +36,7 @@
               <div id="passwordConfirmGroup">
                 <input id="signUpPasswordConfirm" name="signUpPasswordConfirm" maxlength="20" type="password" class="form-control my-2" placeholder="Confirm Password" onblur="confirmPassword()" required/>
               </div>
-              <input type="submit" class="btn btn-default" value="Sign Up" name="signUpButton" role="button"/>
+              <input type="submit" class="btn btn-default mb-5" value="Sign Up" name="signUpButton" role="button"/>
               <div class="input-field">
                 <input id="gotcha" type="text" name="contact" value="" />
               </div>

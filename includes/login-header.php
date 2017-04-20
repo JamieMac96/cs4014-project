@@ -2,9 +2,7 @@
   <div class="container nav-container">
     <div class="row">
       <div class="col-md-6 text-left hidden-sm-down">
-        <a href="/CS4014_project/login.php">
-          <h2 class="header-heading">Peer Review Centre</h2>
-        </a>
+         <h2 class="header-heading">Peer Review Centre</h2>
       </div>
       <div class="login-form col-md-4 offset-md-2">
         <div class="collapse navbar-collapse" id="log-in">

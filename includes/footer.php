@@ -1,13 +1,11 @@
-<footer id="footer" class="invisible py-4">
+<footer id="footer" class="py-5 mt-5">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
 	  <p>Website by Group 2:</p>
-        Rory Egan
+        <br>Rory Egan
 		<br>Jamie Mac Manus
-      </div>
-      <div class="col-md-6">
-        <a href="https://github.com/RoryEgan/cs4014-project" target="_blank">Github</a>
+		<br><br><a href="https://github.com/RoryEgan/cs4014-project" target="_blank">Project Github Repository</a>
       </div>
     </div>
   </div>

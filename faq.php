@@ -3,10 +3,11 @@
 <div class="page-content my-5">
   <div class="container">
     <h2>Faqs</h2>
+	<p class="my-2">This page is to provide the users with answers to any number of commonly asked questions we have anticipated.</p>
 
-    <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+    <div id="accordion" class="accordion my-5" role="tablist" aria-multiselectable="true">
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading1">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
@@ -39,7 +40,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading2">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
@@ -66,7 +67,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading3">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
@@ -82,7 +83,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading4">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
@@ -98,7 +99,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading5">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
@@ -114,7 +115,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-5">
         <div class="card-header" role="tab" id="heading6">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
