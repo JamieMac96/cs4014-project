@@ -26,7 +26,7 @@ if(!isset($_GET['userID'])){
           $picTopBeUsed = 'http://testweb3.csisad.ul.campus/modules/cs4014/group2/files/images/default-profile-image.png';
         }
       ?>
-      <img src="<?php echo $picTopBeUsed ?>" alt="face" height="200" width="200">
+      <img class="img-fluid" src="<?php echo $picTopBeUsed ?>" alt="face" height="200" width="200">
       <?php
         if($profileID == $userID){
         $query = "SELECT * FROM Subject;";
@@ -38,7 +38,7 @@ if(!isset($_GET['userID'])){
 
       <br><br>Email Address: <span contenteditable="true" id="editable-email" class="editable-text"><?php echo "$profileEmailAddress";?>
                 <a href="" id="username"><i class="fa fa-pencil"></i></a></span>
-      <br><br>Student ID: <span contenteditable="true" id="editable-studentid" class="editable-text"><?php echo "$profileStudentID";?>
+      <br><br>Student ID: <span contenteditable="true" maxlength="8" id="editable-studentid" class="editable-text"><?php echo "$profileStudentID";?>
                 <a href="" id="username"><i class="fa fa-pencil"></i></a></span>
       <br><br>Reputation: <?php echo "$profileReputation";?>
       <br><br><label for="profile-pic">Change your profile picture:</label>

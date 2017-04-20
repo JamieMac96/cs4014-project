@@ -75,12 +75,12 @@
       if($docFormat == '.pdf' && file_exists($sampleDoc) && (preg_match('/(Chrome|CriOS)\//i',$_SERVER['HTTP_USER_AGENT'])
 			&& !preg_match('/(Aviator|ChromePlus|coc_|Dragon|Edge|Flock|Iron|Kinza|Maxthon|MxNitro|Nichrome|OPR|Perk|Rockmelt|Seznam|Sleipnir|Spark|UBrowser|Vivaldi|WebExplorer|YaBrowser)/i',
 					$_SERVER['HTTP_USER_AGENT']))){?>
-        <object data="<?php echo $sampleDoc ?>" type="application/<?php echo str_replace(".","",$docFormat) ?>" width="100%" height="65%">
+        <object class="hidden-md-down" data="<?php echo $sampleDoc ?>" type="application/<?php echo str_replace(".","",$docFormat) ?>" width="100%" height="65%">
           <embed type="application/<?php echo str_replace(".","",$sampleDoc) ?>" src="<?php echo $sampleDoc ?>" width="100%" height="100%">
           </embed>
-        </object>
-        <?php
-      }else if(file_exists($sampleDoc)){
+        </object><?php
+      }
+	  if(file_exists($sampleDoc)){
         ?>
         <br><p><b>Download the document sample: </b><a href=" <?php echo "$sampleDoc"; ?> " download>
           <img src="http://testweb3.csisad.ul.campus/modules/cs4014/group2/files/images/document_download.jpg" alt="face" height="42" width="42">
@@ -93,11 +93,9 @@
          ?>
     </div>
   </div>
-  <div>
     <div class="col-md-12">
       <?php include_once('includes/php/scripts/display-also-viewed.php') ?>
     </div>
-  </div>
 </div>
 
 <?php include('includes/footer.php') ?>

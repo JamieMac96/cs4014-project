@@ -48,11 +48,11 @@ class Validator{
   function isValidEmail($signUpEmail) {
 
     if (!filter_var($signUpEmail, FILTER_VALIDATE_EMAIL) === false) {
-      return true;
+		if(strpos($signUpEmail, 'ul.ie') !== false){
+			return true;
+		}
     }
-    else {
-      return false;
-    }
+    return false;
   }
 
   //Student IDs must be 8 characters in length and must be integers.

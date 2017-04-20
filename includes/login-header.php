@@ -19,7 +19,7 @@
           </form>
         </div>
       </div>
-      <div class="col-md-1 hidden-md-up">
+      <div class="col-md-1 hidden-lg-up">
         <div class="dropdown">
           <button class="btn btn-secondary" role="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bars"></i>

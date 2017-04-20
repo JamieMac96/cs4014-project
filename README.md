@@ -12,7 +12,7 @@ in the user being promoted to admin.
 
 # The website will have the following pages/fuctionality
 
-##Login page
+## Login page
   -login (ID,
           password)
 
@@ -24,7 +24,7 @@ in the user being promoted to admin.
             password,
             confrirm password)
 
-##task creation page
+## task creation page
   -where members can create tasks
   -tasks creation involves:
       -Task title
@@ -40,22 +40,24 @@ in the user being promoted to admin.
           -task completion deadline
 
 
-##Task list page
+## Task list page
     -The user can browse tasks on this page.
+ 
+## Task details page
 
-##Task details page
   -When the user clicks on a task the come to this page and view the details of
    the task. (including a sample of the document to be reviewed / proof read).
   -User can claim a task here.
 
-##Claimed task page
+## Claimed task page
+
   -lists claimed tasks
   -ability to mark task as complete
   -ability to request full file from owner
   -ability to cancel tasks (this leads to -15 reputation.)
   -Submissions may be marked as failed after the date is expired
 
-##My tasks page
+## My tasks page
   -list tasks created and show state (pending claim,
                                       unclaimed,
                                       claimed,
@@ -67,13 +69,13 @@ in the user being promoted to admin.
 
 
 
-##Flagged task page (to be seen by moderators only)
+## Flagged task page (to be seen by moderators only)
   -flagged tasks can be viewed by moderators here and taken down if moderators
   see fit.
 
-##Search / results page    
+## Search / results page    
 
-##Extra features
+## Extra features
   -Edit profile
   -delete profile
   -Search tasks

@@ -18,7 +18,7 @@
                 <input id="signUpLastName" name="signUpLastName" maxlength="34" class="form-control my-2" type="text" value="" placeholder="Last Name" onblur="validateLastName()" required/>
               </div>
               <div id="emailSignUpGroup">
-                <input id="signUpEmail" name="signUpEmail" maxlength="254" class="form-control my-2" type="email" onblur="validateEmail()" placeholder="Email" required/>
+                <input id="signUpEmail" name="signUpEmail" maxlength="254" class="form-control my-2" type="email" onblur="validateEmail()" placeholder="Email (must be a UL email)" required/>
               </div>
               <input id="signUpID" maxlength="8" name="signUpID" type="text" autocomplete="off" class="form-control my-2" placeholder="Student ID" required/>
               <select class="form-control my-2" name="signUpSubject">

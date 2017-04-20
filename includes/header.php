@@ -8,9 +8,7 @@
   <div class="container">
     <div class="flex-row">
       <div class="col-xs-12 text-center">
-        <a href="#">
-          <h1 class="header-heading">Peer Review Centre</h1>
-        </a>
+         <h1 class="header-heading">Peer Review Centre</h1>
       </div>
     </div>
   </div>
@@ -37,7 +35,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 hidden-sm-down">
+      <div class="col-md-5">
         <form class="form-inline my-2 my-lg-0" action="search-results.php" method="get">
           <input id="dynamic-search" maxlength="20" name="search-query" class="form-control mr-sm-2" autocomplete="off" type="text" placeholder="Search">
           <ul class="dropdown-menu search-dropdown">

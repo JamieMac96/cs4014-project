@@ -22,19 +22,6 @@
             <p>This website has the purpose of providing a platform for students to
               collaborate on producing high quality academic papers. This is achieved
               through a system of task posting, task claiming and task completion.</p>
-
-              <p>You can post a task by navigating to the home page and clicking the 'new task'
-              button. This will open a form that will allow you to specify the nature of your task.
-              After you have completed the form then you can submit it and your task will be added to our
-              records. The task will then be visible on the home page to other users and on your profile page</p>
-
-              <p>If you see a task on the home page that you wish to complete you can click into that task and view
-              further details about it. Here you will see a button the says 'claim task'. If you click on this button
-              then you will be given details about the implications of claiming the task. Then you can choose to submit
-              the task in which case you will be able to view the task under 'claimed tasks' on your profile page.</p>
-
-              <p>When you wish to mark your claimed task as complete you can simply navigate to the task once more and click the
-              'mark as complete' button.</p>
           </article>
           </div>
         </div>
@@ -71,14 +58,17 @@
         <div class="card-header" role="tab" id="heading3">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-              Question 3
+              How do I create a Task?
               <i class="togglestate fa fa-chevron-down"></i>
             </a>
           </h5>
         </div>
         <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
           <div class="card-block">
-            Answer 3
+            You can post a task by navigating to the home page and clicking the 'new task'
+              button. This will open a form that will allow you to specify the nature of your task.
+              After you have completed the form then you can submit it and your task will be added to our
+              records. The task will then be visible on the home page to other users and on your profile page
           </div>
         </div>
       </div>
@@ -87,14 +77,17 @@
         <div class="card-header" role="tab" id="heading4">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
-              Question 4
+              How do I claim a Task?
               <i class="togglestate fa fa-chevron-down"></i>
             </a>
           </h5>
         </div>
         <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4">
           <div class="card-block">
-            Answer 4
+            If you see a task on the home page that you wish to complete you can click into that task and view
+              further details about it. Here you will see a button the says 'claim task'. If you click on this button
+              then you will be given details about the implications of claiming the task. Then you can choose to submit
+              the task in which case you will be able to view the task under 'claimed tasks' on your profile page.
           </div>
         </div>
       </div>
@@ -103,14 +96,15 @@
         <div class="card-header" role="tab" id="heading5">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
-              Question 5
+              What happens when I complete a Task?
               <i class="togglestate fa fa-chevron-down"></i>
             </a>
           </h5>
         </div>
         <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5">
           <div class="card-block">
-            Answer 5
+            When you wish to mark your claimed task as complete you can simply navigate to the task once more and click the
+              'mark as complete' button.
           </div>
         </div>
       </div>
@@ -119,14 +113,16 @@
         <div class="card-header" role="tab" id="heading6">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
-              Question 6
+              What do moderators do?
               <i class="togglestate fa fa-chevron-down"></i>
             </a>
           </h5>
         </div>
         <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6">
           <div class="card-block">
-            Answer 6
+            Moderators can review and remove flagged tasks and ban users. Flagged tasks are added to a seperate moderator-only page, 
+			where a moderator will review the task and decide if it needs to be removed. If the task does not need to be removed, the 
+			moderator will dismiss the flag.
           </div>
         </div>
       </div>
